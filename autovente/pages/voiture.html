@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voiture Form</title>
+</head>
+<body>
+    <form id="voitureForm">
+        <label for="marque">Marque:</label><br>
+        <input type="text" id="marque" name="marque"><br>
+        <label for="modele">Modele:</label><br>
+        <input type="text" id="modele" name="modele"><br>
+        <label for="annee">Année:</label><br>
+        <input type="text" id="annee" name="annee"><br>
+        <label for="couleur">Couleur:</label><br>
+        <input type="text" id="couleur" name="couleur"><br>
+        <label for="kilometrage">Kilomètrage:</label><br>
+        <input type="text" id="kilometrage" name="kilometrage"><br>
+        <label for="etat">Etat:</label><br>
+        <input type="text" id="etat" name="etat"><br>
+        <label for="consommation">Consommation:</label><br>
+        <input type="text" id="consommation" name="consommation"><br>
+        <label for="options">Options:</label><br>
+        <input type="text" id="options" name="options"><br>
+        <label for="motorisation">Motorisation:</label><br>
+        <input type="text" id="motorisation" name="motorisation"><br>
+        <label for="nombrePortes">Nombre de portes:</label><br>
+        <input type="text" id="nombrePortes" name="nombrePortes"><br>
+        <label for="prixHT">Prix HT:</label><br>
+        <input type="text" id="prixHT" name="prixHT"><br>
+        <label for="emplacementVehicule">Etat:</label><br>
+        <input type="text" id="emplacementVehicule" name="emplacementVehicule"><br>
+        <label for="details">Détails:</label><br>
+        <input type="text" id="details" name="details"><br>
+        <label for="disponibilite">disponibilité :</label><br>
+        <input type="text" id="disponibilite" name="disponibilite"><br>
+        <label for="options">Options:</label><br>
+        <input type="text" id="options" name="options"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <button onclick="calculerImpot()">Calculer Impot</button>
+    <button onclick="calculerPrixTTC()">Calculer Prix TTC</button>
+    <button onclick="afficherDetails()">Afficher Details</button>
+    <button onclick="modifierDetails()">Modifier Details</button>
+    <button onclick="estDisponible()">Est Disponible</button>
+    <button onclick="vendre()">Vendre</button>
+    <button onclick="listerOptions()">Lister Options</button>
+
+
+    <div id="listeVoitures">
+        <p>Test</p>
+    </div>
+    <script src="dom.js"></script>
+    <script src="index.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

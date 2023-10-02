@@ -1,4 +1,21 @@
-class Voiture {
+export class Vehicule {
+    idVehicule
+    marque
+    modele
+    annee
+    couleur
+    kilometrage
+    etat
+    consommation
+    options
+    motorisation
+    nombrePortes
+    prixHT
+    emplacementVehicule
+    impot
+    prixTTC
+    details
+    disponibilite
 
     static listeVehicules = [];
 
@@ -10,7 +27,8 @@ class Voiture {
         this.listeVehicules = listeVehicules;
     }
 
-    constructor(marque, modele, annee, couleur, kilometrage, etat, consommation, options, motorisation, nombrePortes, prixHT, emplacementVehicule, impot, prixTTC, details, disponibilite, options) {
+    constructor(marque, modele, annee, couleur, kilometrage, etat, consommation, options, motorisation, nombrePortes, prixHT, emplacementVehicule, impot, prixTTC, details, disponibilite) {
+        this.idVehicule = Vehicule.listeVehicules.length
         this.marque = marque;
         this.modele = modele;
         this.annee = annee;
@@ -27,8 +45,6 @@ class Voiture {
         this.prixTTC = prixTTC;
         this.details = details;
         this.disponibilite = disponibilite;
-        this.options = options;
-        Voiture.listeVehicules.push(this);
     }
 
     calculerImpot() {

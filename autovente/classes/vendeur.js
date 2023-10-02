@@ -1,21 +1,32 @@
-import Voiture from "./Voiture.js"
+export class Vendeur {
+    idVendeur
+    type
+    nomEntreprise
+    nom
+    prenom
+    localisation
+    nationalite
+    numeroTelephone
+    email
+    inventaire 
+    info
 
-class Vendeur {
     static listeVendeurs = [];
-    static listeVehicules = Voiture.getListeVehicules();
+    static nbVendeur
 
-    constructor(type, nomEntreprise, nom, prenom, localisation, nationalite, contact, inventaire, info ) {
+    constructor(type, nomEntreprise, nom, prenom, localisation, nationalite, numeroTelephone, email, inventaire, info ) {
+        this.idVendeur = Vendeur.listeVendeurs.length
         this.type = type;
         this.nomEntreprise = nomEntreprise;
         this.nom = nom;
         this.prenom = prenom;
         this.localisation = localisation;
         this.nationalite = nationalite;
-        this.contact = contact;
+        this.numeroTelephone = numeroTelephone;
+        this.email = email;
         this.inventaire = inventaire;
         this.info = info;
-        Vendeur.listeVendeurs.push(this);
-    }
+}
 
     ajouterVoiture(voiture) {
         this.inventaire.push(voiture);
