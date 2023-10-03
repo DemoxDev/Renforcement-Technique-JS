@@ -16,3 +16,14 @@ export const displayEleve = () => {
     let c = document.createElement("div").appendChild(document.createTextNode("Coucou"))
     document.getElementById("listeEleve").append(c)
 }
+
+export const displayEleveV3=(target)=>{
+    let html = "<section>"
+    for(let i of Eleve.liste) {
+        html = html + "<article class=\"eleve\"><h4 class=\"eleve-titre\">"+i.nom+" "+i.prenom+"</h4>"
+        html += "<p class=\"eleve-adresse\">"+i.adresse+"<br>"+i.codePostal+" "+i.ville+"</p></article>"
+    }
+    html=html+section
+    console.log(html)
+    target.innerHTML=html;
+}

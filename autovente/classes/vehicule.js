@@ -27,7 +27,7 @@ export class Vehicule {
         this.listeVehicules = listeVehicules;
     }
 
-    constructor(marque, modele, annee, couleur, kilometrage, etat, consommation, options, motorisation, nombrePortes, prixHT, emplacementVehicule, impot, prixTTC, details, disponibilite) {
+    constructor(marque, modele, annee, couleur, kilometrage, etat, consommation, options, motorisation, nombrePortes, prixHT, emplacementVehicule, impot, details, disponibilite) {
         this.idVehicule = Vehicule.listeVehicules.length
         this.marque = marque;
         this.modele = modele;
@@ -42,14 +42,13 @@ export class Vehicule {
         this.prixHT = prixHT;
         this.emplacementVehicule = emplacementVehicule;
         this.impot = impot;
-        this.prixTTC = prixTTC;
         this.details = details;
         this.disponibilite = disponibilite;
     }
 
     calculerImpot() {
         let impot = this.prixHT * 0.2;
-        return impot;
+        this.impot = impot;
     }
 
     calculerPrixTTC() {
