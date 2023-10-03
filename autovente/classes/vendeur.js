@@ -12,7 +12,6 @@ export class Vendeur {
     info
 
     static listeVendeurs = [];
-    static nbVendeur
 
     constructor(type, nomEntreprise, nom, prenom, localisation, nationalite, numeroTelephone, email, inventaire, info ) {
         this.idVendeur = Vendeur.listeVendeurs.length

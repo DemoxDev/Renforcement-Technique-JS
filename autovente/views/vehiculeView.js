@@ -1,4 +1,4 @@
-import { Vehicule } from "./classes/vehicule.js";
+import { Vehicule } from "../classes/vehicule.js";
 
 export const displayVehiculeV4 = () => {
     let html = ""
