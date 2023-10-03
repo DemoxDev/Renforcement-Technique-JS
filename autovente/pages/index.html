@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="./index.css" type="text/css" rel="stylesheet">
+    <link href="../index.css" type="text/css" rel="stylesheet">
     <meta name="viewport" content="width=device-width", initial-scale=1.0>
-    <title>École</title>
+    <title>Site d'achats de véhicules</title>
 </head>
 <body>
     <section>
@@ -12,6 +12,72 @@
         <div id="showListeVehicules">
             <button>Afficher les vehicules</button>
         </div>
+        <div id="ajouterVehiculeDiv">
+            <form name="ajouterVehiculeFormulaire">
+                <div>
+                    <label for="marque">Marque</label>
+                    <input type="text" name="marque">
+                </div>
+                <div>
+                    <label for="modele">Modèle</label>
+                    <input type="text" name="modele">
+                </div>
+                <div>
+                    <label for="annee">Année</label>
+                    <input type="text" name="annee">
+                </div>
+                <div>
+                    <label for="adresse">Couleur</label>
+                    <input type="text" name="couleur">
+                </div>
+                <div>
+                    <label for="kilometrage">Kilomètrage</label>
+                    <input type="text" name="kilometrage">
+                </div>
+                <div>
+                    <label for="etat">Etat</label>
+                    <input type="text" name="etat">
+                </div>
+                <div>
+                    <label for="consommation">Consommation</label>
+                    <input type="text" name="consommation">
+                </div>
+                <div>
+                    <label for="options">Options</label>
+                    <input type="text" name="options">
+                </div>
+                <div>
+                    <label for="motorisation">Motorisation</label>
+                    <input type="text" name="motorisation">
+                </div>
+                <div>
+                    <label for="nombrePortes">Nombre de portes</label>
+                    <input type="text" name="nombrePortes">
+                </div>
+                <div>
+                    <label for="prixHT">Prix HT</label>
+                    <input type="text" name="prixHT">
+                </div>
+                <div>
+                    <label for="emplacementVehicule">Emplacement du véhicule</label>
+                    <input type="text" name="emplacementVehicule">
+                </div>
+                <div>
+                    <label for="details">Details</label>
+                    <input type="text" name="details">
+                </div>
+                <div>
+                    <label for="disponibilite">Disponibilité</label>
+                    <select name="disponibilite">
+                        <option value="Disponible">Disponible</option>
+                        <option value="Indisponible">Indisponible</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="submit" name="ajouterVehicule" value="Ajouter un vehicule">
+                </div>
+            </form>
+        </div>        
     </section>
     <hr>
     <section>
@@ -19,6 +85,44 @@
         <div id="showListeVendeurs">
             <button>Afficher les vendeurs</button>
         </div>
+        <div id="ajouterVendeurDiv">
+            <form name="ajouterVendeurFormulaire">
+                <div>
+                    <label for="type">Type de vendeur : </label>
+                    <select name="type"> 
+                        <option value="aucun">Aucun</option>
+                        <option value="particulier">Particulier</option>
+                        <option value="professionnel">Professionnel</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom">
+                </div>
+                <div>
+                    <label for="prenom">Prenom</label>
+                    <input type="text" name="prenom">
+                </div>
+                <div>
+                    <label for="societe">Société</label>
+                    <input type="text" name="societe">
+                </div>
+                <div>
+                    <label for="localisation">Localisation</label>
+                    <input type="text" name="localisation">
+                </div>
+                <div>
+                    <label for="numeroTelephone">Numéro de téléphone</label>
+                    <input type="text" name="numeroTelephone">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" name="email">
+                </div>
+                    <input type="submit" name="ajouterVendeur" value="Ajouter un vendeur">
+                </div>
+            </form>
+        </div>        
     </section>
     <script type="module" src="../dom.js"></script>
     <script type="module" src="../index.js"></script>

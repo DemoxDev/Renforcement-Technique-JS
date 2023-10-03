@@ -1,8 +1,9 @@
 import { Vehicule } from "../classes/vehicule.js";
 import { Vendeur } from "../classes/vendeur.js";
+import { displayVehiculeV4 } from "../views/vehiculeView.js";
 
-export const ajouterVehicule = (marque, modele, annee, couleur, kilometrage, etat, consommation, options, motorisation, nombrePortes, prixHT, emplacementVehicule, impot, prixTTC, details, disponibilite) => {
-    Vehicule.listeVehicules.push(new Vehicule(marque, modele, annee, couleur, kilometrage, etat, consommation, options, motorisation, nombrePortes, prixHT, emplacementVehicule, impot, prixTTC, details, disponibilite));
+export const ajouterVehicule = (marque, modele, annee, couleur, kilometrage, etat, consommation, options, motorisation, nombrePortes, prixHT, emplacementVehicule, details, disponibilite) => {
+    Vehicule.listeVehicules.push(new Vehicule(marque, modele, annee, couleur, kilometrage, etat, consommation, options, motorisation, nombrePortes, prixHT, emplacementVehicule, details, disponibilite));
 }
 
 export const getVehiculeNonVendu = () => {
@@ -237,3 +238,21 @@ export const displayVendeurV3=(target)=>{
     target.innerHTML = html;
 }
 
+export const submitFormVehicule = (event) => {
+    event.preventDefault();
+    let obj = {}
+    for(let i of event.target.elements) {
+        obj[i.name] = i.value    
+    }
+    if(obj.disponibilite === "Disponible") {
+        obj.disponibilite = true
+    }
+    else {
+        obj.disponibilite = false
+    }
+    console.log(obj)
+    ajouterVehicule(obj.marque, obj.modele, obj.annee, obj.couleur,
+        obj.kilometrage, obj.etat, obj.consommation, obj.options, obj.motorisation,
+        obj.nombrePortes, obj.prixHT, obj.emplacementVehicule,
+        obj.details, obj.disponibilite);
+}

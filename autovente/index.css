@@ -3,3 +3,30 @@
     height: 50%;
     background-color: aqua;
 }
+
+.vehicule {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.vendeur {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+form{
+
+    text-align: center;
+  
+  }
+input {
+      height: 10%;
+      width: 30%;
+      display: block;
+      margin: 0 auto;
+  
+}
+
+  body{
+    box-sizing: border-box;
+  }
