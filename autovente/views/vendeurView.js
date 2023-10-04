@@ -35,3 +35,20 @@ export const displayVendeur = () => {
     }
     return html
 }
+
+export const optionVendeurForm = () => {
+    let html = `<select name="vendeur" id="vendeur">
+                <option value="">Aucun</option>`
+    for(let i of Vendeur.listeVendeurs) {
+        if(i.type === "Professionnel") {
+            html += `<option value="${i.idVendeur}">${i.nomEntreprise}</option>`
+        }
+        else if(i.type === "Particulier"){
+            html += `<option value="${i.idVendeur}">${i.nom} ${i.prenom}</option>`
+        }
+    }
+    html += `</select>`
+    console.log(html)
+    return html
+}
+

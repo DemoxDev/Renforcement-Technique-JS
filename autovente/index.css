@@ -27,6 +27,25 @@ input {
   
 }
 
-  body{
+body{
     box-sizing: border-box;
-  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.element {
+  float: left;
+}
+.clear {
+  clear: both;
+}
+
+.element {
+  display: inline-block;
+  vertical-align: middle;
+}

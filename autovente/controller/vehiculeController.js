@@ -112,68 +112,68 @@ export const displayListeVehicules = (target) => {
     target.appendChild(val);
 }
 
-export const displayListeVendeurs = (target) => {
-    let val = document.createElement("article");
-    val.setAttribute("class", "vendeurs");
+// export const displayListeVendeurs = (target) => {
+//     let val = document.createElement("article");
+//     val.setAttribute("class", "vendeurs");
 
-    Vendeur.listeVendeurs.map((value, index) => {
-        let content = document.createElement("div");
-        content.setAttribute("class", "listeVendeurs");
+//     Vendeur.listeVendeurs.map((value, index) => {
+//         let content = document.createElement("div");
+//         content.setAttribute("class", "listeVendeurs");
 
-        let h4 = document.createElement("h4");
-        h4.setAttribute("class", "vendeur");
-        h4.appendChild(document.createTextNode("Vendeur :"));
-        content.append(h4);
+//         let h4 = document.createElement("h4");
+//         h4.setAttribute("class", "vendeur");
+//         h4.appendChild(document.createTextNode("Vendeur :"));
+//         content.append(h4);
 
-        let type = document.createElement("p");
-        type.setAttribute("class", "type");
-        type.appendChild(document.createTextNode("Type: " + value.type));
-        content.append(type);
+//         let type = document.createElement("p");
+//         type.setAttribute("class", "type");
+//         type.appendChild(document.createTextNode("Type: " + value.type));
+//         content.append(type);
 
-        if(value.type === "Professionnel") {
-            let nomEntreprise = document.createElement("p");
-            nomEntreprise.setAttribute("class", "nomEntreprise");
-            nomEntreprise.appendChild(document.createTextNode("Nom Entreprise: " + value.nomEntreprise));
-            content.append(nomEntreprise);
-        }
-        else {
-            let nom = document.createElement("p");
-            nom.setAttribute("class", "nom");
-            nom.appendChild(document.createTextNode("Nom: " + value.nom));
-            content.append(nom);
+//         if(value.type === "Professionnel") {
+//             let nomEntreprise = document.createElement("p");
+//             nomEntreprise.setAttribute("class", "nomEntreprise");
+//             nomEntreprise.appendChild(document.createTextNode("Nom Entreprise: " + value.nomEntreprise));
+//             content.append(nomEntreprise);
+//         }
+//         else {
+//             let nom = document.createElement("p");
+//             nom.setAttribute("class", "nom");
+//             nom.appendChild(document.createTextNode("Nom: " + value.nom));
+//             content.append(nom);
     
-            let prenom = document.createElement("p");
-            prenom.setAttribute("class", "prenom");
-            prenom.appendChild(document.createTextNode("Prenom: " + value.prenom));
-            content.append(prenom);
+//             let prenom = document.createElement("p");
+//             prenom.setAttribute("class", "prenom");
+//             prenom.appendChild(document.createTextNode("Prenom: " + value.prenom));
+//             content.append(prenom);
 
-            let nationalite = document.createElement("p");
-            nationalite.setAttribute("class", "nationalite");
-            nationalite.appendChild(document.createTextNode("Nationalite: " + value.nationalite));
-            content.append(nationalite);
-        }
+//             let nationalite = document.createElement("p");
+//             nationalite.setAttribute("class", "nationalite");
+//             nationalite.appendChild(document.createTextNode("Nationalite: " + value.nationalite));
+//             content.append(nationalite);
+//         }
        
-        let localisation = document.createElement("p");
-        localisation.setAttribute("class", "localisation");
-        localisation.appendChild(document.createTextNode("Localisation: " + value.localisation));
-        content.append(localisation);
+//         let localisation = document.createElement("p");
+//         localisation.setAttribute("class", "localisation");
+//         localisation.appendChild(document.createTextNode("Localisation: " + value.localisation));
+//         content.append(localisation);
 
-        let numeroTelephone = document.createElement("p");
-        numeroTelephone.setAttribute("class", "numeroTelephone");
-        numeroTelephone.appendChild(document.createTextNode("Numero Telephone: " + value.numeroTelephone));
-        content.append(numeroTelephone);
+//         let numeroTelephone = document.createElement("p");
+//         numeroTelephone.setAttribute("class", "numeroTelephone");
+//         numeroTelephone.appendChild(document.createTextNode("Numero Telephone: " + value.numeroTelephone));
+//         content.append(numeroTelephone);
 
-        let email = document.createElement("p");
-        email.setAttribute("class", "email");
-        email.appendChild(document.createTextNode("Email: " + value.email));
-        content.append(email);
+//         let email = document.createElement("p");
+//         email.setAttribute("class", "email");
+//         email.appendChild(document.createTextNode("Email: " + value.email));
+//         content.append(email);
 
-        val.appendChild(content);
-    })
-    console.log(val)
-    target.appendChild(val);
-    console.log(document.getElementById('val').innerHTML)
-}
+//         val.appendChild(content);
+//     })
+//     console.log(val)
+//     target.appendChild(val);
+//     console.log(document.getElementById('val').innerHTML)
+// }
 
 export const displayVehicules = () => {
     let c = document.createElement("div").appendChild(document.createTextNode("Coucou"))
