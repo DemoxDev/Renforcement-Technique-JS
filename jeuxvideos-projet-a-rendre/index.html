@@ -9,9 +9,10 @@
 <body>
     <section>
         <h3>Liste des jeux</h3>
-        <div id="showListeJeux" class="grid h-screen place-items-center">
+        <div id="showListeJeux" class="flex flex-row justify-center">
         </div>
-        <div id="ajouterJeuDiv">
+        <button id="toggleAjouterJeuDiv">Ajouter un Jeu</button>
+        <div id="ajouterJeuDiv" style="display: none">
             <form name="ajouterJeuFormulaire">
                 <div>
                     <label for="nom">Nom</label>
@@ -58,7 +59,8 @@
         <h3>Liste des clients</h3>
         <div id="showListeClients" class="flex flex-row justify-center">
         </div>
-        <div id="ajouterClientDiv">
+        <button id="toggleAjouterClientDiv">Ajouter un Client</button>
+        <div id="ajouterClientDiv" style="display: none">
             <form name="ajouterClientFormulaire">
                 <div>
                     <label for="type">Type de Client : </label>

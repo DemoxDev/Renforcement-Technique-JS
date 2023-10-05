@@ -37,3 +37,13 @@ export const displayClient = () => {
     }
     return html
 }
+
+export const ToggleDivFormClients = () => {
+    var T = document.getElementById("ajouterClientDiv");
+    if(T.style.display === "none"){
+        T.style.display = "block";
+    }
+    else{
+        T.style.display = "none";
+    }
+}

@@ -7,10 +7,11 @@ export class Jeu {
     genre
     prix
     disponibilite
+    photos = []
 
     static listeJeux = [];
 
-    constructor(nom, developpeur, editeur, annee, genre, prix, disponibilite) {
+    constructor(nom, developpeur, editeur, annee, genre, prix, disponibilite, photos) {
         this.idJeu = Jeu.listeJeux.length;
         this.nom = nom;
         this.developpeur = developpeur;
@@ -19,6 +20,7 @@ export class Jeu {
         this.genre = genre;
         this.prix = prix;
         this.disponibilite = disponibilite
+        this.photos = photos
     }
 
 }

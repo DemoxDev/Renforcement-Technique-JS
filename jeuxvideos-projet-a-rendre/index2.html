@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JeuAchat</title>
+  <link href="./dist/output.css" rel="stylesheet">
+  <link href="./dist/index.css" rel="stylesheet">
+  <style>
+    /* Custom styles can be added here */
+  </style>
+</head>
+
+<body class="bg-gray-100">
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+      <h1 class="text-2xl font-bold">JeuAchat</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#" class="text-gray-600 hover:text-gray-800">Accueil</a></li>
+          <!-- Ajouter liens vers d'autres pages si j'ai le temps d'en faire plus
+            <li><a href="#" class="text-gray-600 hover:text-gray-800">Jeux</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-800">Clients</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-800">Contact</a></li>
+          -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-6">
+    <section>
+      <h2 class="text-2xl font-bold mb-4">Jeux en Vedette</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div id="showListeJeux" class="flex flex-row justify-center">
+        </div>
+        <!-- Cards de jeux à ajouter ici -->
+      </div>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-4">Nouvelles Sorties</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Cards de jeux à ajouter ici -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-200 py-4">
+    <div class="container mx-auto px-4">
+      <p class="text-center text-gray-600">© 2023 Cristian Mesina. Tous droits réservés.</p>
+    </div>
+  </footer>
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>

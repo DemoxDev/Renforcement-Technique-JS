@@ -2,8 +2,8 @@ import { Jeu } from "../classes/jeu.js";
 import { Client } from "../classes/client.js";
 import { displayJeu } from "../views/jeuView.js";
 
-export const ajouterJeu = (nom, developpeur, editeur, annee, genre, prix, disponibilite) => {
-    Jeu.listeJeux.push(new Jeu(nom, developpeur, editeur, annee, genre, prix, disponibilite));
+export const ajouterJeu = (nom, developpeur, editeur, annee, genre, prix, disponibilite, photos) => {
+    Jeu.listeJeux.push(new Jeu(nom, developpeur, editeur, annee, genre, prix, disponibilite, photos));
 }
 
 export const getJeuNonVendu = () => {
