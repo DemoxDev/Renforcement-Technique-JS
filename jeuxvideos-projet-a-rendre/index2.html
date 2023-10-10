@@ -39,7 +39,7 @@
       </div>
     </section>
 
-    <div id="toggleAjouterJeuDiv" style="display: none;">
+    <div id="toggleAjouterJeuDiv" style="display: none; margin-top: 50px;">
       <form name="ajouterJeuFormulaire">
           <div>
               <label for="nom">Nom</label>
@@ -70,18 +70,77 @@
               <input type="text" name="disponibilite">
           </div>
           <div>
-              <input type="submit" name="ajouterJeu" value="Ajouter un vehicule">
+            <label for="images">Images</label>
+            <input type="file" multiple name="images">
+          </div>
+          <div>
+            <label for="quantite">Qte en stock</label>
+            <input type="text" name="quantite">
+          </div>
+          <div>
+              <input type="submit" name="ajouterJeu" value="Ajouter un jeu">
           </div>
       </form>
   </div>      
-  <button onclick="ToggleDivFormJeux()">Toggle Form</button>  
+  <button id="buttonToggleAjouterJeuDiv" style="margin-top: 20px;">Basculer le formulaire d'ajout de jeu</button>  
 
     <section class="mt-8">
-      <h2 class="text-2xl font-bold mb-4">Nouvelles Sorties</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <!-- Cards de jeux à ajouter ici -->
+      <h2 class="text-2xl font-bold mb-4">Clients</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div id="showListeClients" class="flex flex-row justify-center" style="width:200px; position:relative">
+        </div>
+        <!-- Cards de clients à ajouter ici -->
       </div>
     </section>
+
+    <div id="toggleAjouterClientDiv" style="display: none; margin-top: 50px;">
+      <form name="ajouterClientFormulaire">
+          <div>
+              <label for="type">Type</label>
+              <select name="type" id="typeClient"> 
+                <option value="aucun">Aucun</option>
+                <option value="particulier">Particulier</option>
+                <option value="professionnel">Professionnel</option>
+            </select>
+          </div>
+          <div>
+              <label for="nomEntreprise">Société</label>
+              <input type="text" name="nomEntreprise">
+          </div>
+          <div>
+              <label for="nom">Nom</label>
+              <input type="text" name="nom">
+          </div>
+          <div>
+              <label for="prenom">Prénom</label>
+              <input type="text" name="prenom">
+          </div>
+          <div>
+              <label for="adresse">Adresse</label>
+              <input type="text" name="adresse">
+          </div>
+          <div>
+              <label for="codePostale">Code postale</label>
+              <input type="text" name="codePostale">
+          </div>
+          <div>
+            <label for="ville">Ville</label>
+            <input type="text" name="ville">
+          </div>
+          <div>
+            <label for="numeroTelephone">Numéro de téléphone</label>
+            <input type="text" name="numeroTelephone">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="text" name="email">
+          </div>
+          <div>
+              <input type="submit" name="ajouterJeu" value="Ajouter un client">
+          </div>
+      </form>
+  </div>      
+  <button id="buttonToggleAjouterClientDiv" style="margin-top: 20px;">Basculer le formulaire d'ajout de client</button>  
   </main>
 
   <footer class="bg-gray-200 py-4">

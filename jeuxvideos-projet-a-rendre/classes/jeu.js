@@ -8,10 +8,11 @@ export class Jeu {
     prix
     disponibilite
     photos = []
+    quantite
 
     static listeJeux = [];
 
-    constructor(nom, developpeur, editeur, annee, genre, prix, disponibilite, photos) {
+    constructor(nom, developpeur, editeur, annee, genre, prix, disponibilite, photos, quantite) {
         this.idJeu = Jeu.listeJeux.length;
         this.nom = nom;
         this.developpeur = developpeur;
@@ -21,6 +22,7 @@ export class Jeu {
         this.prix = prix;
         this.disponibilite = disponibilite
         this.photos = photos
+        this.quantite = quantite
     }
 
 }

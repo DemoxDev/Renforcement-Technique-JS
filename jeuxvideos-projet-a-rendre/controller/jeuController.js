@@ -2,8 +2,8 @@ import { Jeu } from "../classes/jeu.js";
 import { Client } from "../classes/client.js";
 import { displayJeu } from "../views/jeuView.js";
 
-export const ajouterJeu = (nom, developpeur, editeur, annee, genre, prix, disponibilite, photos) => {
-    Jeu.listeJeux.push(new Jeu(nom, developpeur, editeur, annee, genre, prix, disponibilite, photos));
+export const ajouterJeu = (nom, developpeur, editeur, annee, genre, prix, disponibilite, photos, quantite) => {
+    Jeu.listeJeux.push(new Jeu(nom, developpeur, editeur, annee, genre, prix, disponibilite, photos, quantite));
 }
 
 export const getJeuNonVendu = () => {
@@ -14,9 +14,14 @@ export const getJeuNonVendu = () => {
 
 export const submitFormJeu = (event) => {
     event.preventDefault();
+    console.log("submitFormJeu appelé")
     let obj = {}
     for(let i of event.target.elements) {
-        obj[i.name] = i.value    
+        if (i.type === 'file') {
+            obj[i.name] = Array.from(i.files).map(file => URL.createObjectURL(file));
+        } else {
+            obj[i.name] = i.value;
+        }
     }
     if(obj.disponibilite === "Disponible") {
         obj.disponibilite = true
@@ -25,5 +30,21 @@ export const submitFormJeu = (event) => {
         obj.disponibilite = false
     }
     console.log(obj)
-    ajouterJeu(obj.nom, obj.developpeur, obj.editeur, obj.annee, obj.genre, obj.prix, obj.disponibilite);
+    ajouterJeu(obj.nom, obj.developpeur, obj.editeur, obj.annee, obj.genre, obj.prix, obj.disponibilite, obj.images, obj.quantite);
+}
+
+export const getJeuById = (id) => {
+    return Jeu.listeJeux.find(jeu => jeu.idJeu === parseInt(id));
+}
+
+export const retirerJeu = (idJeu) => {
+    const jeu = getJeuById(idJeu);
+    console.log(jeu)
+    if(jeu) {
+        const jeuIndex = Jeu.listeJeux.indexOf(jeu);
+        console.log(jeuIndex)
+        Jeu.listeJeux.splice(jeuIndex, 1);
+        return true;
+    }
+    return false;
 }

@@ -9,6 +9,7 @@ export class Client {
     ville
     numeroTelephone
     email
+    jeux
     
     static listeClients = [];
 
@@ -23,6 +24,7 @@ export class Client {
         this.ville = ville;
         this.numeroTelephone = numeroTelephone;
         this.email = email;
+        this.jeux = []
     }
     
 }

@@ -7,15 +7,13 @@
 </head>
 <body>
     <div class="slide relative">
-        <img src="${tab[0]}" alt="" style="width: 200px; height: 250px;" class="transition-all ease-in-out duration-1000 transform translate-x-0" />
+        <img id="image" src="${tab[0]}" alt="" style="width: 200px; height: 250px;" class="transition-all ease-in-out duration-1000 transform translate-x-0" />
         <!-- Le bouton < -->
-        <a class="absolute-button p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer"
-            onclick="moveSlide(-1)">❮</a>
+        <a class="absolute-button p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer">❮</a>
 
         <!-- Le bouton > -->
-        <a class="absolute right-0 top-1/2 p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer"
-            onclick="moveSlide(1)">❯</a>
+        <a class="absolute right-0 top-1/2 p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer">❯</a>
         </div>
-        <script type="module" src="./index.js"></script>
+        <script type="module" src="index.js"></script>
 </body>
 </html>
