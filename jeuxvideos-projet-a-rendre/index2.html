@@ -7,9 +7,7 @@
   <title>JeuAchat</title>
   <link href="./dist/output.css" rel="stylesheet">
   <link href="./dist/index.css" rel="stylesheet">
-  <style>
-    /* Custom styles can be added here */
-  </style>
+  <link rel="icon" type="image/x-icon" href="/img/1f914.svg">
 </head>
 
 <body class="bg-gray-100">
@@ -33,7 +31,7 @@
     <section class="mt-8">
       <h2 class="text-2xl font-bold mb-4">Jeux en vedette</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
-        <div id="showListeJeux" class="flex flex-row justify-center" style="width:200px; position:relative">
+        <div id="showListeJeux" class="flex flex-wrap justify-center" style="width:200px; position:relative">
         </div>
         <!-- Cards de jeux à ajouter ici -->
       </div>
@@ -41,53 +39,55 @@
 
     <div id="toggleAjouterJeuDiv" style="display: none; margin-top: 50px;">
       <form name="ajouterJeuFormulaire">
-          <div>
+          <div class="input-container">
+              <input type="text" name="nom" required="">
               <label for="nom">Nom</label>
-              <input type="text" name="nom">
           </div>
-          <div>
+          <div class="input-container">
+              
+              <input type="text" name="developpeur" required="">
               <label for="developpeur">Développeur</label>
-              <input type="text" name="developpeur">
           </div>
-          <div>
+          <div class="input-container">
+              <input type="text" name="prix" required="">
               <label for="prix">Prix</label>
-              <input type="text" name="prix">
           </div>
-          <div>
+          <div class="input-container">
+              <input type="text" name="editeur" required="">
               <label for="editeur">Editeur</label>
-              <input type="text" name="editeur">
           </div>
-          <div>
+          <div class="input-container">
+              <input type="text" name="annee" required="">
               <label for="annee">Année</label>
-              <input type="text" name="annee">
           </div>
-          <div>
+          <div class="input-container">
+              <input type="text" name="genre" required="">
               <label for="genre">Genre</label>
-              <input type="text" name="genre">
           </div>
-          <div>
-              <label for="disponibilite">Disponibilité</label>
-              <input type="text" name="disponibilite">
-          </div>
-          <div>
-            <label for="images">Images</label>
+          <div class="input-container">
+            <input type="checkbox" id="disponibilite" name="disponibilite" class="border border-gray-300">
+            <label for="disponibilite">Disponibilité</label>
+          </div>        
+          <div class="input-container">
             <input type="file" multiple name="images">
+            <label for="images">Images</label>
           </div>
-          <div>
+          <div class="input-container">
+            <input type="text" name="quantite" required="">
             <label for="quantite">Qte en stock</label>
-            <input type="text" name="quantite">
           </div>
           <div>
-              <input type="submit" name="ajouterJeu" value="Ajouter un jeu">
+              <button type="submit" name="ajouterJeu" value="Ajouter un jeu" type="button" class="ajouterJeu">Ajouter un jeu</button>
           </div>
       </form>
   </div>      
-  <button id="buttonToggleAjouterJeuDiv" style="margin-top: 20px;">Basculer le formulaire d'ajout de jeu</button>  
+  <button id="buttonToggleAjouterJeuDiv" class="buttonToggleAjouterJeuDiv" style="margin-top: 20px;">Basculer le formulaire d'ajout de jeu</button>  
 
     <section class="mt-8">
       <h2 class="text-2xl font-bold mb-4">Clients</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
-        <div id="showListeClients" class="flex flex-row justify-center" style="width:200px; position:relative">
+        <div id="showListeClients" class="">
+
         </div>
         <!-- Cards de clients à ajouter ici -->
       </div>
@@ -95,52 +95,55 @@
 
     <div id="toggleAjouterClientDiv" style="display: none; margin-top: 50px;">
       <form name="ajouterClientFormulaire">
-          <div>
-              <label for="type">Type</label>
-              <select name="type" id="typeClient"> 
-                <option value="aucun">Aucun</option>
-                <option value="particulier">Particulier</option>
-                <option value="professionnel">Professionnel</option>
-            </select>
+        <div>
+          <label for="type">Type</label>
+          <select name="type" id="typeClient" style="margin-bottom: 20px;">
+            <option value="Aucun">Aucun</option>
+            <option value="Particulier">Particulier</option>
+            <option value="Professionnel">Professionnel</option>
+          </select>
+        </div>
+        <div id="fieldsWrapper">
+          <div class="input-container">
+            <input type="text" name="nomEntreprise" required="">
+            <label for="nomEntreprise">Société</label>
           </div>
-          <div>
-              <label for="nomEntreprise">Société</label>
-              <input type="text" name="nomEntreprise">
+          <div id="nomField" class="input-container">
+            <input type="text" name="nomCli" required="">
+            <label for="nomCli">Nom</label>
           </div>
-          <div>
-              <label for="nom">Nom</label>
-              <input type="text" name="nom">
+          <div class="input-container">
+            <input type="text" name="prenomCli" required="">
+            <label for="prenomCli">Prénom</label>
           </div>
-          <div>
-              <label for="prenom">Prénom</label>
-              <input type="text" name="prenom">
+          <div class="input-container">
+            <input type="text" name="adresse" required="">
+            <label for="adresse">Adresse</label>
           </div>
-          <div>
-              <label for="adresse">Adresse</label>
-              <input type="text" name="adresse">
+          <div class="input-container">
+            <input type="text" name="codePostale" required="">
+            <label for="codePostale">Code postale</label>
           </div>
-          <div>
-              <label for="codePostale">Code postale</label>
-              <input type="text" name="codePostale">
-          </div>
-          <div>
+          <div class="input-container">
+            <input type="text" name="ville" required="">
             <label for="ville">Ville</label>
-            <input type="text" name="ville">
           </div>
-          <div>
+          <div class="input-container">
+            <input type="text" name="numeroTelephone" required="">
             <label for="numeroTelephone">Numéro de téléphone</label>
-            <input type="text" name="numeroTelephone">
           </div>
-          <div>
+          <div class="input-container">
+            <input type="text" name="email" required="">
             <label for="email">Email</label>
-            <input type="text" name="email">
           </div>
-          <div>
-              <input type="submit" name="ajouterJeu" value="Ajouter un client">
-          </div>
+        </div>
+        <div>
+          <button type="submit" name="ajouterClient" value="Ajouter un client" type="button" class="ajouterClient">Ajouter un client</button>
+        </div>
       </form>
-  </div>      
-  <button id="buttonToggleAjouterClientDiv" style="margin-top: 20px;">Basculer le formulaire d'ajout de client</button>  
+    </div>
+  <button id="buttonToggleAjouterClientDiv" class="buttonToggleAjouterClientDiv" style="margin-top: 20px;">Basculer le formulaire d'ajout de client</button>
+    
   </main>
 
   <footer class="bg-gray-200 py-4">

@@ -90,32 +90,52 @@ export const optionClientForm = () => {
     console.log(html)
     return html
 }
+
 export const toggleDivFormClients = () => {
     const ajouterClientDiv = document.getElementById("toggleAjouterClientDiv");
+    const fieldsWrapper = document.getElementById("fieldsWrapper");
   
     if (ajouterClientDiv !== null) {
       ajouterClientDiv.style.display = ajouterClientDiv.style.display === "none" ? "block" : "none";
-  
-      if (ajouterClientDiv.type === "Particulier") {
-        ajouterClientDiv.nomEntreprise.style.display = "block";
-        ajouterClientDiv.nom.style.display = "none";
-        ajouterClientDiv.prenom.style.display = "none";
-        ajouterClientDiv.adresse.style.display = "none";
-        ajouterClientDiv.codePostale.style.display = "none";
-        ajouterClientDiv.ville.style.display = "none";
-        ajouterClientDiv.numeroTelephone.style.display = "none";
-        ajouterClientDiv.email.style.display = "none";
-
-      } else if (ajouterClientDiv.type === "Professionnel") {
-        ajouterClientDiv.nomEntreprise.style.display = "none";
-        ajouterClientDiv.nom.style.display = "block";
-        ajouterClientDiv.prenom.style.display = "block";
-        ajouterClientDiv.adresse.style.display = "none";
-        ajouterClientDiv.codePostale.style.display = "none";
-        ajouterClientDiv.ville.style.display = "none";
-        ajouterClientDiv.numeroTelephone.style.display = "none";
-        ajouterClientDiv.email.style.display = "none"
-      }
+      fieldsWrapper.style.display = "none";
     }
   }
-
+  
+  export const swapType = () => {
+    const typeSelect = document.getElementById("typeClient");
+    const fieldsWrapper = document.getElementById("fieldsWrapper");
+  
+    if (typeSelect.value === "Particulier") {
+      fieldsWrapper.style.display = "block";
+      document.getElementsByName("nomEntreprise")[0].parentNode.style.display = "none";
+      document.getElementsByName("nomEntreprise")[0].removeAttribute("required");
+      document.getElementsByName("nomCli")[0].parentNode.style.display = "block";
+      document.getElementsByName("nomCli")[0].setAttribute("required", "true");
+      document.getElementsByName("prenomCli")[0].parentNode.style.display = "block";
+      document.getElementsByName("prenomCli")[0].setAttribute("required", "true");
+      document.getElementsByName("adresse")[0].parentNode.style.display = "block";
+      document.getElementsByName("codePostale")[0].parentNode.style.display = "block";
+      document.getElementsByName("ville")[0].parentNode.style.display = "block";
+      document.getElementsByName("numeroTelephone")[0].parentNode.style.display = "block";
+      document.getElementsByName("email")[0].parentNode.style.display = "block";
+      document.getElementById("nomField").style.display = "block";
+  
+    } else if (typeSelect.value === "Professionnel") {
+      fieldsWrapper.style.display = "block";
+      document.getElementsByName("nomEntreprise")[0].parentNode.style.display = "block";
+      document.getElementsByName("nomEntreprise")[0].setAttribute("required", "true");
+      document.getElementsByName("nomCli")[0].parentNode.style.display = "none";
+      document.getElementsByName("nomCli")[0].removeAttribute("required");
+      document.getElementsByName("prenomCli")[0].parentNode.style.display = "none";
+      document.getElementsByName("prenomCli")[0].removeAttribute("required");
+      document.getElementsByName("adresse")[0].parentNode.style.display = "block";
+      document.getElementsByName("codePostale")[0].parentNode.style.display = "block";
+      document.getElementsByName("ville")[0].parentNode.style.display = "block";
+      document.getElementsByName("numeroTelephone")[0].parentNode.style.display = "block";
+      document.getElementsByName("email")[0].parentNode.style.display = "block";
+      document.getElementById("nomField").style.display = "none";
+    } else {
+      fieldsWrapper.style.display = "none";
+    }
+  }
+  

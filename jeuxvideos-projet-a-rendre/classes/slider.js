@@ -22,4 +22,9 @@ export class Slider {
       }
       this.updateImage();
     }
+
+    currentSlide(n) {
+      this.index = n;
+      this.updateImage();
+    }
   }

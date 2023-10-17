@@ -10,52 +10,53 @@ export const displayJeu = () => {
     let sliders = [];
     let sliderIndex = 0;
     for(let i of Jeu.listeJeux){
-      html += `<div class="slider" style="margin-top: 50px;">`
-      html += `
-      <div class="slide relative">
-          <img id="image${sliderIndex}" src="${i.photos && i.photos[0]}" alt="" style="width: 200px; height: 250px;" class="transition-all ease-in-out duration-1000 transform translate-x-0" />
-          <!-- Le bouton < -->
-          <a class="absolute-button p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer"
-              onclick="sliders[${sliderIndex}].moveSlide(-1)">❮</a>
-  
-          <!-- Le bouton > -->
-          <a class="absolute right-0 top-1/2 p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer"
-              onclick="sliders[${sliderIndex}].moveSlide(1)">❯</a>
-      </div>
-      `
-  
-      html += `
-      <div class="flex justify-center items-center space-x-5" style="margin-top: 250px">
-      `
-      for (let j = 0; j < (i.photos && i.photos.length); j++) {
-          html += `
-          <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide(${j + 1})"></div>
-          `
-      }
-      html += `
-      </div>
-      <article class="jeu">
-            <div class="jeuTitre">
-                <h4 class="text-2xl">${i.nom}</h4>
-                <h4 class="text-xl">${i.prix}€</h4>
-                <h4 class="text-xl">${i.developpeur}</h4>
-                <h6>${i.editeur}</h6>
+        html += `<div class="jeu-card bg-white rounded-lg shadow-md p-4">`
+            html += `<div class="slider" style="">`
+            html += `
+            <div class="slide relative">
+                <img id="image${sliderIndex}" src="${i.photos && i.photos[0]}" alt="" style="width: 200px; height: 250px;" class="transition-all ease-in-out duration-1000 transform translate-x-0" class="center"/>
+                <!-- Le bouton < -->
+                <a class="absolute-button p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer"
+                    onclick="sliders[${sliderIndex}].moveSlide(-1)">❮</a>
+        
+                <!-- Le bouton > -->
+                <a class="absolute right-0 top-1/2 p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer"
+                    onclick="sliders[${sliderIndex}].moveSlide(1)">❯</a>
             </div>
-            <div class="jeuInfos">
-                <p class="annee">Annee: ${i.annee}</p>
-                <p class="genre">Genre: ${i.genre}</p>
-                <h5>${i.disponibilite ? "Disponible" : "Indisponible"}</h5>
-                <p class"quantite">Quantite: ${i.quantite}</p>
+            `
+        
+            html += `
+            <div class="flex justify-center items-center space-x-5" style="margin-top: 250px">
+            `
+            for (let j = 0; j < (i.photos && i.photos.length); j++) {
+                html += `
+                <div class="dot w-4 h-4 rounded-full cursor-pointer" onclick="sliders[${sliderIndex}].currentSlide(${j})"></div>
+                `
+            }
+            html += `
             </div>
-            <div class="jeuActions">
-                <select id="clientSelect-${i.idJeu}" title="Selectionner un client">
-                    <option value="">Selectionner un client</option>
-                    ${Client.listeClients.map(client => `<option value="${client.idClient}">${client.type === 'Particulier' ? client.nom + ' ' + client.prenom : client.nomEntreprise}</option>`).join('')}
-                </select>
-                <button class="addJeu" data-jeu-id="${i.idJeu}" type="button">Ajouter au client</button>
-                <button class="retirerJeu" data-jeu-id="${i.idJeu}" type="button">Retirer le jeu</button>
+            <article class="jeu ">
+                <div class="jeuTitre">
+                    <h4 class="text-2xl">${i.nom}</h4>
+                    <h4 class="text-xl">${i.prix}€</h4>
+                    <h4 class="text-xl">${i.developpeur}</h4>
+                    <h6>${i.editeur}</h6>
+                </div>
+                <div class="jeuInfos">
+                    <p class="annee">Annee: ${i.annee}</p>
+                    <p class="genre">Genre: ${i.genre}</p>
+                    <h5>${i.disponibilite ? "Disponible" : "Indisponible"}</h5>
+                    <p class"quantite">Quantite: ${i.quantite}</p>
+                </div>
+                <div class="jeuActions">
+                    <select id="clientSelect-${i.idJeu}" title="Selectionner un client" class="border border-gray-300">
+                        <option value="">Selectionner un client</option>
+                        ${Client.listeClients.map(client => `<option value="${client.idClient}">${client.type === 'Particulier' ? client.nom + ' ' + client.prenom : client.nomEntreprise}</option>`).join('')}
+                    </select>
+                    <button class="addJeu" data-jeu-id="${i.idJeu}" type="button">Ajouter au client</button>
+                    <button class="retirerJeu" data-jeu-id="${i.idJeu}" type="button">Retirer le jeu</button>            </div>
+            </article>
             </div>
-        </article>
         </div>
         `
         sliders.push(new Slider(i.photos, 0, sliders.length));

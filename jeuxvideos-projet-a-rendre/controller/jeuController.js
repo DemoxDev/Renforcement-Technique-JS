@@ -19,19 +19,18 @@ export const submitFormJeu = (event) => {
     for(let i of event.target.elements) {
         if (i.type === 'file') {
             obj[i.name] = Array.from(i.files).map(file => URL.createObjectURL(file));
+        } else if (i.type === 'checkbox') {
+            obj[i.name] = i.checked;
         } else {
             obj[i.name] = i.value;
         }
     }
-    if(obj.disponibilite === "Disponible") {
-        obj.disponibilite = true
-    }
-    else {
-        obj.disponibilite = false
-    }
-    console.log(obj)
+    
+    console.log(obj);
     ajouterJeu(obj.nom, obj.developpeur, obj.editeur, obj.annee, obj.genre, obj.prix, obj.disponibilite, obj.images, obj.quantite);
 }
+
+
 
 export const getJeuById = (id) => {
     return Jeu.listeJeux.find(jeu => jeu.idJeu === parseInt(id));
