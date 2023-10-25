@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./dist/output.css" rel="stylesheet">
+  <title>JeuAchat</title>
+</head>
+<body>
+    <section>
+        <h3>Liste des jeux</h3>
+        <div id="showListeJeux" class="flex flex-row justify-center">
+        </div>
+        <button id="toggleAjouterJeuDiv">Ajouter un Jeu</button>
+        <div id="ajouterJeuDiv" style="display: none">
+            <form name="ajouterJeuFormulaire">
+                <div>
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom">
+                </div>
+                <div>
+                    <label for="developpeur">Développeur</label>
+                    <input type="text" name="developpeur">
+                </div>
+                <div>
+                    <label for="editeur">Editeur</label>
+                    <input type="text" name="editeur">
+                </div>
+                <div>
+                    <label for="annee">Année</label>
+                    <input type="text" name="annee">
+                </div>
+                <div>
+                    <label for="genre">Genre</label>
+                    <input type="text" name="genre">
+                </div>
+                <div>
+                    <label for="prix">Prix</label>
+                    <input type="text" name="prix">
+                </div>
+                <div>
+                    <label for="disponibilite">Disponibilité</label>
+                    <select name="disponibilite">
+                        <option value="Disponible">Disponible</option>
+                        <option value="Indisponible">Indisponible</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="Client">Client</label>
+                </div>
+                <div>
+                    <input type="submit" name="ajouterJeu" value="Ajouter un Jeu">
+                </div>
+            </form>
+        </div>        
+    </section>
+    <hr>
+    <section>
+        <h3>Liste des clients</h3>
+        <div id="showListeClients" class="flex flex-row justify-center">
+        </div>
+        <button id="toggleAjouterClientDiv">Ajouter un Client</button>
+        <div id="ajouterClientDiv" style="display: none">
+            <form name="ajouterClientFormulaire">
+                <div>
+                    <label for="type">Type de Client : </label>
+                    <select name="type"> 
+                        <option value="aucun">Aucun</option>
+                        <option value="particulier">Particulier</option>
+                        <option value="professionnel">Professionnel</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom">
+                </div>
+                <div>
+                    <label for="prenom">Prenom</label>
+                    <input type="text" name="prenom">
+                </div>
+                <div>
+                    <label for="nomEntreprise">Société</label>
+                    <input type="text" name="nomEntreprise">
+                </div>
+                <div>
+                    <label for="adresse">Adresse</label>
+                    <input type="text" name="adresse">
+                </div>
+                <div>
+                    <label for="cp">Code postal</label>
+                    <input type="text" name="cp">
+                </div>
+                <div>
+                    <label for="ville">Ville</label>
+                    <input type="text" name="ville">
+                </div>
+                <div>
+                    <label for="numeroTelephone">Numéro de téléphone</label>
+                    <input type="text" name="numeroTelephone">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" required>
+                </div>
+                    <input type="submit" name="ajouterClient" value="Ajouter un Client">
+                </div>
+            </form>
+        </div>        
+    </section>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>

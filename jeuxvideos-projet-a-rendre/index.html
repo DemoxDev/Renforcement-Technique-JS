@@ -1,112 +1,157 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./dist/output.css" rel="stylesheet">
   <title>JeuAchat</title>
+  <link href="./dist/output.css" rel="stylesheet">
+  <link href="./dist/index.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/img/1f914.svg">
 </head>
-<body>
-    <section>
-        <h3>Liste des jeux</h3>
-        <div id="showListeJeux" class="flex flex-row justify-center">
+
+<body class="bg-gray-100">
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+      <h1 class="text-2xl font-bold">JeuAchat</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="index.html" class="text-gray-600 hover:text-gray-800">Accueil</a></li>
+          <!-- Ajouter liens vers d'autres pages si j'ai le temps d'en faire plus
+            <li><a href="#" class="text-gray-600 hover:text-gray-800">Jeux</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-800">Clients</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-800">Contact</a></li>
+          -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-6">
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-4">Jeux en vedette</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div id="showListeJeux" class="flex flex-wrap justify-center" style="width:200px; position:relative">
         </div>
-        <button id="toggleAjouterJeuDiv">Ajouter un Jeu</button>
-        <div id="ajouterJeuDiv" style="display: none">
-            <form name="ajouterJeuFormulaire">
-                <div>
-                    <label for="nom">Nom</label>
-                    <input type="text" name="nom">
-                </div>
-                <div>
-                    <label for="developpeur">Développeur</label>
-                    <input type="text" name="developpeur">
-                </div>
-                <div>
-                    <label for="editeur">Editeur</label>
-                    <input type="text" name="editeur">
-                </div>
-                <div>
-                    <label for="annee">Année</label>
-                    <input type="text" name="annee">
-                </div>
-                <div>
-                    <label for="genre">Genre</label>
-                    <input type="text" name="genre">
-                </div>
-                <div>
-                    <label for="prix">Prix</label>
-                    <input type="text" name="prix">
-                </div>
-                <div>
-                    <label for="disponibilite">Disponibilité</label>
-                    <select name="disponibilite">
-                        <option value="Disponible">Disponible</option>
-                        <option value="Indisponible">Indisponible</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="Client">Client</label>
-                </div>
-                <div>
-                    <input type="submit" name="ajouterJeu" value="Ajouter un Jeu">
-                </div>
-            </form>
-        </div>        
+        <!-- Cards de jeux à ajouter ici -->
+      </div>
     </section>
-    <hr>
-    <section>
-        <h3>Liste des clients</h3>
-        <div id="showListeClients" class="flex flex-row justify-center">
+
+    <div id="toggleAjouterJeuDiv" style="display: none; margin-top: 50px;">
+      <form name="ajouterJeuFormulaire">
+          <div class="input-container">
+              <input type="text" name="nom" required="">
+              <label for="nom">Nom</label>
+          </div>
+          <div class="input-container">
+              
+              <input type="text" name="developpeur" required="">
+              <label for="developpeur">Développeur</label>
+          </div>
+          <div class="input-container">
+              <input type="text" name="prix" required="">
+              <label for="prix">Prix</label>
+          </div>
+          <div class="input-container">
+              <input type="text" name="editeur" required="">
+              <label for="editeur">Editeur</label>
+          </div>
+          <div class="input-container">
+              <input type="text" name="annee" required="">
+              <label for="annee">Année</label>
+          </div>
+          <div class="input-container">
+              <input type="text" name="genre" required="">
+              <label for="genre">Genre</label>
+          </div>
+          <div class="input-container">
+            <input type="checkbox" id="disponibilite" name="disponibilite" class="border border-gray-300">
+            <label for="disponibilite">Disponibilité</label>
+          </div>        
+          <div class="input-container">
+            <input type="file" multiple name="images">
+            <label for="images">Images</label>
+          </div>
+          <div class="input-container">
+            <input type="text" name="quantite" required="">
+            <label for="quantite">Qte en stock</label>
+          </div>
+          <div>
+              <button type="submit" name="ajouterJeu" value="Ajouter un jeu" type="button" class="ajouterJeu">Ajouter un jeu</button>
+          </div>
+      </form>
+  </div>      
+  <button id="buttonToggleAjouterJeuDiv" class="buttonToggleAjouterJeuDiv" style="margin-top: 20px;">Basculer le formulaire d'ajout de jeu</button>  
+
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold mb-4">Clients</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div id="showListeClients" class="">
+
         </div>
-        <button id="toggleAjouterClientDiv">Ajouter un Client</button>
-        <div id="ajouterClientDiv" style="display: none">
-            <form name="ajouterClientFormulaire">
-                <div>
-                    <label for="type">Type de Client : </label>
-                    <select name="type"> 
-                        <option value="aucun">Aucun</option>
-                        <option value="particulier">Particulier</option>
-                        <option value="professionnel">Professionnel</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="nom">Nom</label>
-                    <input type="text" name="nom">
-                </div>
-                <div>
-                    <label for="prenom">Prenom</label>
-                    <input type="text" name="prenom">
-                </div>
-                <div>
-                    <label for="nomEntreprise">Société</label>
-                    <input type="text" name="nomEntreprise">
-                </div>
-                <div>
-                    <label for="adresse">Adresse</label>
-                    <input type="text" name="adresse">
-                </div>
-                <div>
-                    <label for="cp">Code postal</label>
-                    <input type="text" name="cp">
-                </div>
-                <div>
-                    <label for="ville">Ville</label>
-                    <input type="text" name="ville">
-                </div>
-                <div>
-                    <label for="numeroTelephone">Numéro de téléphone</label>
-                    <input type="text" name="numeroTelephone">
-                </div>
-                <div>
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" required>
-                </div>
-                    <input type="submit" name="ajouterClient" value="Ajouter un Client">
-                </div>
-            </form>
-        </div>        
+        <!-- Cards de clients à ajouter ici -->
+      </div>
     </section>
-    <script type="module" src="./index.js"></script>
+
+    <div id="toggleAjouterClientDiv" style="display: none; margin-top: 50px;">
+      <form name="ajouterClientFormulaire">
+        <div>
+          <label for="type">Type</label>
+          <select name="type" id="typeClient" style="margin-bottom: 20px;">
+            <option value="Aucun">Aucun</option>
+            <option value="Particulier">Particulier</option>
+            <option value="Professionnel">Professionnel</option>
+          </select>
+        </div>
+        <div id="fieldsWrapper">
+          <div class="input-container">
+            <input type="text" name="nomEntreprise" required="">
+            <label for="nomEntreprise">Société</label>
+          </div>
+          <div id="nomField" class="input-container">
+            <input type="text" name="nomCli" required="">
+            <label for="nomCli">Nom</label>
+          </div>
+          <div class="input-container">
+            <input type="text" name="prenomCli" required="">
+            <label for="prenomCli">Prénom</label>
+          </div>
+          <div class="input-container">
+            <input type="text" name="adresse" required="">
+            <label for="adresse">Adresse</label>
+          </div>
+          <div class="input-container">
+            <input type="text" name="codePostale" required="">
+            <label for="codePostale">Code postale</label>
+          </div>
+          <div class="input-container">
+            <input type="text" name="ville" required="">
+            <label for="ville">Ville</label>
+          </div>
+          <div class="input-container">
+            <input type="text" name="numeroTelephone" required="">
+            <label for="numeroTelephone">Numéro de téléphone</label>
+          </div>
+          <div class="input-container">
+            <input type="text" name="email" required="">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div>
+          <button type="submit" name="ajouterClient" value="Ajouter un client" type="button" class="ajouterClient">Ajouter un client</button>
+        </div>
+      </form>
+    </div>
+  <button id="buttonToggleAjouterClientDiv" class="buttonToggleAjouterClientDiv" style="margin-top: 20px;">Basculer le formulaire d'ajout de client</button>
+    
+  </main>
+
+  <footer class="bg-gray-200 py-4">
+    <div class="container mx-auto px-4">
+      <p class="text-center text-gray-600">© 2023 Cristian Mesina. Tous droits réservés.</p>
+    </div>
+  </footer>
+  <script type="module" src="./index.js"></script>
 </body>
+
 </html>
